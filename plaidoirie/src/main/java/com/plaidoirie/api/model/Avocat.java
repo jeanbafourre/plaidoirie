@@ -13,20 +13,21 @@ public class Avocat {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="idAvocat")
-	Long IdAvocat;
+	Long idAvocat;
 	@Column(unique=true)
-	Long NumeroDeToque;
+	Long numeroDeToque;
 	public Long getIdAvocat() {
-		return IdAvocat;
+		return idAvocat;
 	}
 	public void setIdAvocat(Long idAvocat) {
-		IdAvocat = idAvocat;
+		this.idAvocat = idAvocat;
 	}
 	public Long getNumeroDeToque() {
-		return NumeroDeToque;
+		return numeroDeToque;
 	}
 	public void setNumeroDeToque(Long numeroDeToque) {
-		NumeroDeToque = numeroDeToque;
+		this.numeroDeToque = numeroDeToque;
 	}
-
+	
+	
 }
