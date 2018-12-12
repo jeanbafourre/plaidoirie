@@ -13,30 +13,45 @@ public class Compte {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="idCompte")
-	Long idCompte;
+	private Long idCompte;
 	@Column (unique=true)
-	String login;
-	String password;
+	private String login;
+	private String password;
+	
+	
+	public Compte() {}
+	
+	
+	public Compte(Long idCompte, String login, String password) {
+		this.idCompte = idCompte;
+		this.login = login;
+		this.password = password;
+	}
+
+
 	public Long getIdCompte() {
 		return idCompte;
 	}
+	
 	public void setIdCompte(Long idCompte) {
 		this.idCompte = idCompte;
 	}
+	
 	public String getLogin() {
 		return login;
 	}
+	
 	public void setLogin(String login) {
 		this.login = login;
 	}
+	
 	public String getPassword() {
 		return password;
 	}
+	
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	
-	
+
 
 }

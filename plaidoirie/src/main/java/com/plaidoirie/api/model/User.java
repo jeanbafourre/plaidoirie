@@ -12,11 +12,24 @@ import javax.persistence.Table;
 public class User {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	Long idUser;
-	String nomUser;
-	String prenomUser;
+	private Long idUser;
+	private String nomUser;
+	private String prenomUser;
 	@Column(unique=true)
-	String mailUser;
+	private String mailUser;
+
+	
+	public User() {}
+	
+
+	public User(Long idUser, String nomUser, String prenomUser, String mailUser) {
+		this.idUser = idUser;
+		this.nomUser = nomUser;
+		this.prenomUser = prenomUser;
+		this.mailUser = mailUser;
+	}
+
+
 	public Long getIdUser() {
 		return idUser;
 	}

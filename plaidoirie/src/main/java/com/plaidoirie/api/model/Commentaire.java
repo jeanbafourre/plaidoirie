@@ -11,7 +11,17 @@ import javax.persistence.Table;
 public class Commentaire {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	Long idCommentaire;
+	private Long idCommentaire;
+	
+	public Commentaire() {}
+	
+	
+
+	public Commentaire(Long idCommentaire) {
+		this.idCommentaire = idCommentaire;
+	}
+
+
 
 	public Long getIdCommentaire() {
 		return idCommentaire;

@@ -11,29 +11,44 @@ import javax.persistence.Table;
 public class Post {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	Long idpost;
-	String titre;
-	String contenu;
+	private Long idpost;
+	private String titre;
+	private String contenu;
 	// Date Date;
-	public Long getIdpost() {
-		return idpost;
-	}
-	public void setIdpost(Long idpost) {
+	
+	
+	public Post() {}
+	
+	
+	public Post(Long idpost, String titre, String contenu) {
 		this.idpost = idpost;
-	}
-	public String getTitre() {
-		return titre;
-	}
-	public void setTitre(String titre) {
 		this.titre = titre;
-	}
-	public String getContenu() {
-		return contenu;
-	}
-	public void setContenu(String contenu) {
 		this.contenu = contenu;
 	}
 	
 	
+	public Long getIdpost() {
+		return idpost;
+	}
+	
+	public void setIdpost(Long idpost) {
+		this.idpost = idpost;
+	}
+	
+	public String getTitre() {
+		return titre;
+	}
+	
+	public void setTitre(String titre) {
+		this.titre = titre;
+	}
+	
+	public String getContenu() {
+		return contenu;
+	}
+	
+	public void setContenu(String contenu) {
+		this.contenu = contenu;
+	}
 
 }

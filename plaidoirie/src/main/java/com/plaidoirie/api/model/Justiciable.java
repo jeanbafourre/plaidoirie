@@ -13,7 +13,16 @@ public class Justiciable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="idJusticiable")
-	Long idJusticiable;
+	private Long idJusticiable;
+
+	
+	public Justiciable() {}
+
+	
+	public Justiciable(Long idJusticiable) {
+		this.idJusticiable = idJusticiable;
+	}
+
 
 	public Long getIdJusticiable() {
 		return idJusticiable;

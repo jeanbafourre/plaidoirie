@@ -11,7 +11,16 @@ import javax.persistence.Table;
 public class Piece {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	Long idPiece;
+	private Long idPiece;
+
+	
+	public Piece() {}
+
+	
+	public Piece(Long idPiece) {
+		this.idPiece = idPiece;
+	}
+
 
 	public Long getIdPiece() {
 		return idPiece;
