@@ -1,18 +1,26 @@
 package com.plaidoirie.api.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table (name="post")
 public class Post {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
+	@NotBlank
+	@Column(name = "idpost")
 	private Long idpost;
+	
+	@Column(name = "titre")
 	private String titre;
+	
+	@Column(name = "contenu")
 	private String contenu;
 	// Date Date;
 	

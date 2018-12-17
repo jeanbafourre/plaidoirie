@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table (name="Avocat")
@@ -13,6 +14,7 @@ public class Avocat {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
+	@NotBlank
 	@Column(name="idAvocat")
 	private Long idAvocat;	
 	
@@ -41,4 +43,4 @@ public class Avocat {
 	public void setNumeroDeToque(Long numeroDeToque) {
 		this.numeroDeToque = numeroDeToque;
 	}
-}s
+}

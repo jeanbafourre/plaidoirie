@@ -6,16 +6,21 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table (name="compte")
 public class Compte {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
+	@NotBlank
 	@Column(name="idCompte")
 	private Long idCompte;
+	
 	@Column (unique=true)
 	private String login;
+	
+	@Column(name="password")
 	private String password;
 	
 	

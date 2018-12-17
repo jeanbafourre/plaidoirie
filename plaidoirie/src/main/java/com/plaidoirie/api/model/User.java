@@ -6,15 +6,23 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table (name="user")
 public class User {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
+	@NotBlank
+	@Column(name = "idUser")
 	private Long idUser;
+	
+	@Column(name = "nomUser")
 	private String nomUser;
+	
+	@Column(name = "prenomUser")
 	private String prenomUser;
+	
 	@Column(unique=true)
 	private String mailUser;
 
