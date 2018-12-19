@@ -5,41 +5,42 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table (name="compte")
 public class Compte {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	@NotBlank
-	@Column(name="idCompte")
-	private Long idCompte;
+	private Long id;
 	
 	@Column (unique=true)
 	private String login;
 	
-	@Column(name="password")
 	private String password;
-	
+
+	@OneToOne
+	@JoinColumn(name="compte_id")
+	private User user;
 	
 	public Compte() {}
 	
 	
 	public Compte(Long idCompte, String login, String password) {
-		this.idCompte = idCompte;
+		this.id = idCompte;
 		this.login = login;
 		this.password = password;
 	}
 
 
-	public Long getIdCompte() {
-		return idCompte;
+	public Long getId() {
+		return id;
 	}
 	
-	public void setIdCompte(Long idCompte) {
-		this.idCompte = idCompte;
+	public void setId(Long idCompte) {
+		this.id = idCompte;
 	}
 	
 	public String getLogin() {
@@ -58,5 +59,12 @@ public class Compte {
 		this.password = password;
 	}
 
+	public User getUser() {
+		return user;
+	}
 
+
+	public void setUser(User user) {
+		this.user = user;
+	}
 }

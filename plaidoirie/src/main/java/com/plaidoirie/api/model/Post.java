@@ -1,46 +1,49 @@
 package com.plaidoirie.api.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table (name="post")
 public class Post {
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	@NotBlank
-	@Column(name = "idpost")
-	private Long idpost;
+	private Long id;
 	
-	@Column(name = "titre")
+	
 	private String titre;
 	
-	@Column(name = "contenu")
+	
 	private String contenu;
 	// Date Date;
 	
+	
+	@ManyToOne 
+	@JoinColumn(name="post_id")
+	private Justiciable justiciable;
 	
 	public Post() {}
 	
 	
 	public Post(Long idpost, String titre, String contenu) {
-		this.idpost = idpost;
+		this.id = idpost;
 		this.titre = titre;
 		this.contenu = contenu;
 	}
 	
 	
-	public Long getIdpost() {
-		return idpost;
+	public Long getId() {
+		return id;
 	}
 	
-	public void setIdpost(Long idpost) {
-		this.idpost = idpost;
+	public void setId(Long idpost) {
+		this.id = idpost;
 	}
 	
 	public String getTitre() {

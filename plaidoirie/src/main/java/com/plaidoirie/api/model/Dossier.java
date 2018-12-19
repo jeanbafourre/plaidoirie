@@ -3,8 +3,9 @@ package com.plaidoirie.api.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table (name="dossier")
@@ -12,10 +13,16 @@ public class Dossier {
 	
 	@Id
 	@Column(unique=true)
-	@NotBlank
 	private Long numeroRG;
 		
-
+	@ManyToOne 
+	@JoinColumn(name="dossier_id")
+	private Justiciable justiciable;
+	
+	@ManyToOne 
+	@JoinColumn(name="dossier_id")
+	private Avocat avocat;
+	
 	public Dossier() {}
 	
 
@@ -33,7 +40,24 @@ public class Dossier {
 	}
 
 
-	
-	
+	public Justiciable getJusticiable() {
+		return justiciable;
+	}
+
+
+	public void setJusticiable(Justiciable justiciable) {
+		this.justiciable = justiciable;
+	}
+
+
+	public Avocat getAvocat() {
+		return avocat;
+	}
+
+
+	public void setAvocat(Avocat avocat) {
+		this.avocat = avocat;
+	}
+
 
 }

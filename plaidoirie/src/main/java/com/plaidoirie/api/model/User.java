@@ -5,44 +5,55 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table (name="user")
+@MappedSuperclass
 public class User {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	@NotBlank
-	@Column(name = "idUser")
-	private Long idUser;
+	private Long id;
 	
-	@Column(name = "nomUser")
 	private String nomUser;
 	
-	@Column(name = "prenomUser")
 	private String prenomUser;
 	
 	@Column(unique=true)
 	private String mailUser;
-
 	
+	@OneToOne(mappedBy = "user")
+	private Compte compte;
+
+
+	public Compte getCompte() {
+		return compte;
+	}
+
+
+	public void setCompte(Compte compte) {
+		this.compte = compte;
+	}
+
+
 	public User() {}
 	
 
 	public User(Long idUser, String nomUser, String prenomUser, String mailUser) {
-		this.idUser = idUser;
+		this.id = idUser;
 		this.nomUser = nomUser;
 		this.prenomUser = prenomUser;
 		this.mailUser = mailUser;
 	}
 
 
-	public Long getIdUser() {
-		return idUser;
+	public Long getId() {
+		return id;
 	}
-	public void setIdUser(Long idUser) {
-		this.idUser = idUser;
+	public void setId(Long idUser) {
+		this.id = idUser;
 	}
 	public String getNomUser() {
 		return nomUser;
