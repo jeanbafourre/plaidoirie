@@ -11,6 +11,7 @@ import javax.persistence.Table;
 @Entity
 @Table (name="commentaire")
 public class Commentaire {
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;

@@ -74,7 +74,4 @@ public class Avocat extends User {
 		this.dossiers = dossiers;
 	}
 	
-	
-	
-	
 }

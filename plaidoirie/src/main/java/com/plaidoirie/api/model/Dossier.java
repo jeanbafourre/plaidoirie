@@ -25,7 +25,6 @@ public class Dossier {
 	
 	public Dossier() {}
 	
-
 	public Dossier(Long numeroRG) {
 		this.numeroRG = numeroRG;
 	}

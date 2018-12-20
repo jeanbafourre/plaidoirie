@@ -12,6 +12,7 @@ import javax.persistence.Table;
 @Entity
 @Table (name="compte")
 public class Compte {
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;

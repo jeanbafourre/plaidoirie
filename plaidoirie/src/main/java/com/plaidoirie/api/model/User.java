@@ -13,6 +13,7 @@ import javax.persistence.Table;
 @Table (name="user")
 @MappedSuperclass
 public class User {
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
